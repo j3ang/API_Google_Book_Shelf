@@ -16,30 +16,7 @@
 <canvas id="stage" id="respondCanvas"></canvas>
 
 </body>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script type="text/javascript">
-$(document).ready( function(){
-    //Get the canvas &
-    context var c = $('#respondCanvas');
-    var ct = c.get(0).getContext('2d');
-    var container = $(c).parent();
-
-    //Run function when browser resizes
-    $(window).resize( respondCanvas );
-
-    function respondCanvas(){
-        c.attr('width', $(container).width() ); //max width
-        c.attr('height', $(container).height() ); //max height
-
-        //Call a function to redraw other content (texts, images etc)
-    }
-
-    //Initial callhttp://127.0.0.1:8080
-    respondCanvas();
-
-});
-
-  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
 <script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script type="text/javascript" src="animation.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>

@@ -1,14 +1,14 @@
 
 // This animation js was referenced from Rach Smith and modified by Alex Wang
 // Ssource: https://codepen.io/rachsmith/pen/fBoiD?q=circle&limit=rachsmith
-
 (function(){
     var stage, textStage, form, input;
     var circles, textPixels, textFormed;
     var offsetX, offsetY, text;
     var colors = ['#f9fbff','#70FFEE','#E5FF70'];
-
     function init() {
+
+
         initStages();
         initForm();
         initCircles();
@@ -21,6 +21,7 @@
     function initStages() {
         offsetX = (window.innerWidth-600)/2;
         offsetY = (window.innerHeight-300)/2;
+
 
         stage = new createjs.Stage("stage");
         stage.canvas.width = window.innerWidth;
@@ -95,11 +96,22 @@
     function addListeners() {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
         });
     }
 
 
+    var x = 0 
 
-    window.onload = function() { init() };
+    window.onload = function() { 
+        init();
+        $(window).resize(function(){
+         init();
+    });
+
+        
+
+
+
+         };
 })();
