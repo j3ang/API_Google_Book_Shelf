@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>API Project 2 PlayGround</title>
+  <title>Online Library</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no"  />
-  <link rel="stylesheet" href="screen.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="screen.css" />
 </head>
-
-
 <body>
 
-<form id="user_form">
-	<button type="button" id="submit"> Click Me!</button>
-</form>
-
+<main id="main-content">  
+      <form id="form">
+        <input type="text" id="inputText" placeholder="ISBNs#:" />
+        <input type="submit" id="submit" value="Add Book" />
+        <ul id="results"></ul>
+      </form>
+<canvas id="stage" id="respondCanvas"></canvas>
+</main>
 </body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script type="text/javascript">
+$(document).ready( function(){
+    //Get the canvas &
+    context var c = $('#respondCanvas');
+    var ct = c.get(0).getContext('2d');
+    var container = $(c).parent();
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="site.js"></script>
+    //Run function when browser resizes
+    $(window).resize( respondCanvas );
 
+    function respondCanvas(){
+        c.attr('width', $(container).width() ); //max width
+        c.attr('height', $(container).height() ); //max height
+
+        //Call a function to redraw other content (texts, images etc)
+    }
+
+    //Initial call
+    respondCanvas();
+
+}); 
+    
+  </script>
+<script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script type="text/javascript" src="animation.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="site.js"></script>
 </html>
