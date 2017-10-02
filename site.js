@@ -1,8 +1,8 @@
 var my_data;
 
 
-$('#user-form').on('submit', function(e) {
-  var isbn = $('#bookinfo').val();
+$('#form').on('submit', function(e) {
+  var isbn = $('#inputText').val();
   var url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn ;
   $.get(url, function(data) {
     var title = data.items[0].volumeInfo.title;
@@ -18,14 +18,14 @@ $('#user-form').on('submit', function(e) {
 
 
 
+00718092520071809252
+
+
+//For later
 
 
 
-//For later 
-
-
-
-// //function to validate what type of format user is using search for the book 
+// //function to validate what type of format user is using search for the book
 // //and then parse it to keys
 // function formatValidation(userinput){
 
@@ -33,20 +33,20 @@ $('#user-form').on('submit', function(e) {
 
 
 // function getBookDetails(isbn) {
-  
+
 //   // Query the book database by ISBN code.
-//   isbn = isbn || "9781451648546"; // Steve Jobs book 
-  
+//   isbn = isbn || "9781451648546"; // Steve Jobs book
+
 //   var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn;
-  
+
 //   var response = UrlFetchApp.fetch(url);
 //   var results = JSON.parse(response);
-  
+
 //   if (results.totalItems) {
-    
+
 //     // There'll be only 1 book per ISBN
 //     var book = results.items[0];
-    
+
 //     var title = (book["volumeInfo"]["title"]);
 //     var subtitle = (book["volumeInfo"]["subtitle"]);
 //     var authors = (book["volumeInfo"]["authors"]);
@@ -55,10 +55,10 @@ $('#user-form').on('submit', function(e) {
 //     var publisher = (book["volumeInfo"]["publisher"]);
 //     var publishedDate = (book["volumeInfo"]["publishedDate"]);
 //     var webReaderLink = (book["accessInfo"]["webReaderLink"]);
-    
+
 //     // For debugging
 //     Logger.log(book);
-  
+
 //   }
-  
+
 // }
