@@ -82,30 +82,47 @@ canvas{
 }
 
 input[type="text"] {
-  border: 1px solid #ddd;
-  padding: 6px;
-  font-size: 18px;
-  width: 200px;
+  border: 0.063em solid #ddd;
+  font-size: 1em;
+  width: 12.500em;
   text-transform: capitalize;
+  padding: 0.375em;
+  height: 2.188em;
 }
 
 input[type="submit"] {
   display: block;
-  width: 100px;
+  width: 6.250em;
   border: 0;
-  line-height: 35px;
-  height: 35px;
+  height: 3.082em;
   color: #fff;
-  background: mediumpurple;
-  font-size: 18px;
+  background: #dd3a27;
+  font-size: 1em;
   cursor: pointer;
+  padding: 0.375em;
 }
 
 form {
-	position: absolute;
-	display: flex;
-	flex-direction: row;
-	
-  width: 600px;
-  height: 100px;
+  margin: 0 auto;
+  margin-top: 8em;
+  display: flex;
+  flex-direction: row;
+  width: 18.750em;
+  height: auto;
 }
+
+#results{
+  margin: 0 auto;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  width: 18.750em;
+  height: auto;
+}
+
+a{
+  color: #ffe3c7;
+  text-decoration: none;
+}
+
+

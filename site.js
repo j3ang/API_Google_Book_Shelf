@@ -1,5 +1,5 @@
 var my_data;
-
+var num=0;
 $('#form').on('submit', function(e) {
   var isbn = $('#inputText').val();
   var url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn ;
@@ -7,8 +7,15 @@ $('#form').on('submit', function(e) {
     var title = data.items[0].volumeInfo.title;
     var img = data.items[0].volumeInfo.imageLinks.thumbnail;
 
-    $('#results').append('<li><a id="'+data.title+'" href="'+data.items[0].volumeInfo.infoLink+'">'+title+'</a></li>');
-    $('#'+ data.webReaderLink).prepend('<img src="'+img+'" />');
+    ++num;
+    $('#results').append('<li><img src="'+img+'" id="img'+num+'"/>'+
+      '<a id="'+data.title+'" href="'+data.items[0].volumeInfo.infoLink+'">'+title+'</a></li>');
+   
+    $('#img'+num).wrap($('<a>',{
+   href:img
+}));
+
+    console.log($('#img'+num));
 
   });
 

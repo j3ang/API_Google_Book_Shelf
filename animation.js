@@ -1,6 +1,7 @@
 
 // This animation js was referenced from Rach Smith and modified by Alex Wang
 // Ssource: https://codepen.io/rachsmith/pen/fBoiD?q=circle&limit=rachsmith
+
 (function(){
     var stage, textStage, form, input;
     var circles, textPixels, textFormed;
@@ -39,9 +40,43 @@
 
     function initCircles() {
         circles = [];
-        for(var i=0; i<250; i++) {
+        for(var i=0; i<100; i++) {
+            var circle = new createjs.Shape();
+            var r = 3.5;
+            var x = window.innerWidth*Math.random();
+            var y = window.innerHeight*Math.random();
+            var color = colors[Math.floor(i%colors.length)];
+            var alpha = 0.2 + Math.random()*0.5;
+            circle.alpha = alpha;
+            circle.radius = r;
+            circle.graphics.beginFill(color).drawCircle(0, 0, r);
+            circle.x = x;
+            circle.y = y;
+            circles.push(circle);
+            stage.addChild(circle);
+            circle.movement = 'float';
+            tweenCircle(circle);
+        }
+        for(var i=0; i<100; i++) {
             var circle = new createjs.Shape();
             var r = 2.5;
+            var x = window.innerWidth*Math.random();
+            var y = window.innerHeight*Math.random();
+            var color = colors[Math.floor(i%colors.length)];
+            var alpha = 0.2 + Math.random()*0.5;
+            circle.alpha = alpha;
+            circle.radius = r;
+            circle.graphics.beginFill(color).drawCircle(0, 0, r);
+            circle.x = x;
+            circle.y = y;
+            circles.push(circle);
+            stage.addChild(circle);
+            circle.movement = 'float';
+            tweenCircle(circle);
+        }
+        for(var i=0; i<50; i++) {
+            var circle = new createjs.Shape();
+            var r = 1;
             var x = window.innerWidth*Math.random();
             var y = window.innerHeight*Math.random();
             var color = colors[Math.floor(i%colors.length)];
