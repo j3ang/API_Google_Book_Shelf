@@ -137,12 +137,12 @@
     window.onload = function() { 
         init();
         $(window).resize(function(){
-         init();
-    });
+           init();
+       });
 
         
 
 
 
-         };
+    };
 })();
