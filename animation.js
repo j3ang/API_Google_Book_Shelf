@@ -7,9 +7,8 @@
     var circles, textPixels, textFormed;
     var offsetX, offsetY, text;
     var colors = ['#f9fbff','#70FFEE','#E5FF70'];
+    
     function init() {
-
-
         initStages();
         initForm();
         initCircles();
@@ -23,7 +22,6 @@
         offsetX = (window.innerWidth-600)/2;
         offsetY = (window.innerHeight-300)/2;
 
-
         stage = new createjs.Stage("stage");
         stage.canvas.width = window.innerWidth;
         stage.canvas.height = window.innerHeight;
@@ -35,8 +33,6 @@
         form.style.left = offsetX+'px';
         input = document.getElementById('inputText');
     }
-
-
 
     function initCircles() {
         circles = [];
