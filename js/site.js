@@ -25,6 +25,10 @@ $(document).ready(function(){ //variables used in this script is protected from 
   function parseData(arr) {   
       //clears out the old resultss, and change the font color
       $('#results').empty();
+      $('#results').css('floate', 'left');
+      $('#results').css('height', '29.125em');
+      $('#results').css('overflow-y', 'auto');
+
       $('#results').css('color', 'white');
     //display data
     for( var x=0; x < arr.items.length; x++){
