@@ -1,4 +1,3 @@
-
 // This animation js was referenced from Rach Smith and modified by Alex Wang
 // Ssource: https://codepen.io/rachsmith/pen/fBoiD?q=circle&limit=rachsmith
 

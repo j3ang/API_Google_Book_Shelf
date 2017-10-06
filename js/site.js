@@ -21,17 +21,30 @@ $(document).ready(function(){ //variables used in this script is protected from 
   });
 
 
+
+
   function parseData(arr) {   
       //clears out the old resultss, and change the font color
       $('#results').empty();
       $('#results').css('color', 'white');
-    // var checkbox = $('<input type="checkbox" />');
     //display data
     for( var x=0; x < arr.items.length; x++){
       $('#results').append("<li>" + 
         "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail+ "/>" +
         arr.items[x].volumeInfo.title + "</li>");
-    }   
+
+        $('#img'+x).hover(function(){
+          console.log("hover in");
+        $(this).css("width", "150px");
+        }, function(){
+          console.log("hover out");
+        $(this).css("width", "30px");
+    });
+    }
+
+
   }
+
 });
 
+    // var checkbox = $('<input type="checkbox" />');
