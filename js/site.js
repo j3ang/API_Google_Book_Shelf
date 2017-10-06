@@ -5,11 +5,12 @@ $(document).ready(function(){ //variables used in this script is protected from 
     var input = $('#inputText').val();
     $.ajax({
       type: "GET",
-      url: 'https://www.googleapis.com/books/v1/volumes?q=' + input,
+      url: 'https://www.googleapis.com/books/v1/volumes?q=' + input + '&maxResults=40',
       dataType: "html",
       success: function (results){
        var data = JSON.parse(results);
        if (Array.isArray(data.items)) {
+        console.log(data.items);
         parseData(data);
       } else {
         console.log('single object: ');
@@ -19,8 +20,6 @@ $(document).ready(function(){ //variables used in this script is protected from 
     });
     e.preventDefault();
   });
-
-
 
 
   function parseData(arr) {   
