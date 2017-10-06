@@ -32,10 +32,17 @@ $(document).ready(function(){ //variables used in this script is protected from 
       $('#results').css('color', 'white');
     //display data
     for( var x=0; x < arr.items.length; x++){
-      $('#results').append("<li>" + 
+      $('#results').append("<li>" + (x+1) + ". " +
         "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail+ "/>" +
-        arr.items[x].volumeInfo.title + "</li>");
+        arr.items[x].volumeInfo.title  + "<p id=author" + x +">" + arr.items[x].volumeInfo.authors[0] + "</p></li>");
 
+
+        //add link to the image
+        $('#img'+x).wrap("<a href='" + arr.items[x].volumeInfo.previewLink +"'/>");
+
+        //style author names
+        $('#author'+x).css('color','#f9f494');
+        $('#author'+x).css('font-size','0.8em');
 
         //select books that user wants to save
 
