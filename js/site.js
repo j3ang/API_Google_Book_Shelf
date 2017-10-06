@@ -36,6 +36,11 @@ $(document).ready(function(){ //variables used in this script is protected from 
         "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail+ "/>" +
         arr.items[x].volumeInfo.title + "</li>");
 
+
+        //select books that user wants to save
+
+
+        //hover effect to enlarg thumbnails
         $('#img'+x).hover(function(){
           console.log("hover in");
         $(this).css("width", "150px");
@@ -43,6 +48,8 @@ $(document).ready(function(){ //variables used in this script is protected from 
           console.log("hover out");
         $(this).css("width", "30px");
     });
+        //prevent movile devices from scrolling off screen when reach to the end
+        $( ".html" ).draggable({ containment: "#containment-wrapper", scroll: false })
     }
 
 
