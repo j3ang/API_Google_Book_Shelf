@@ -49,7 +49,7 @@ $(document).ready(function(){ //variables used in this script is protected from 
         $(this).css("width", "30px");
     });
         //prevent movile devices from scrolling off screen when reach to the end
-        $( ".html" ).draggable({ containment: "#containment-wrapper", scroll: false })
+        
     }
 
 

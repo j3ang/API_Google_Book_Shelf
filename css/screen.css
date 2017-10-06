@@ -62,8 +62,13 @@ img {
 }
 
 /*************************animated js style*****************************/
+html{
+  height: 1em;
+}
 body {
   background: #0c0c0c;
+  height: 1em;
+  overflow: auto;
 }
 
 main-content{
