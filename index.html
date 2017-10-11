@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/animation.min.js"></script>
@@ -12,6 +13,15 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
 	<link rel="stylesheet" href="css/smoothproducts.css">
 	<link rel="stylesheet" href="css/screen.css" />
+
+	  <style>
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0;  }
+  #selectable li { margin: 1.5em; padding: 0.4em; font-size: 1.4em; height: 3em; }
+  </style>
+
 </head>
 <body>
 
@@ -24,7 +34,7 @@
 			<input type="submit" id="add" value="Add" />
 			<input type="submit" id="clear" value="Clear" />
 		</div>
-		<ul id="results"></ul>
+		<ul id="selectable"></ul>
 
 	</main>
 	<canvas id="stage" id="respondCanvas"></canvas>

@@ -3,6 +3,9 @@ $(document).ready(function(){ //variables used in this script is protected from 
 //hide action buttons initially | show once book's selected
 $('#actions').hide();
 
+//jquery UI library to make list selectable
+$( "#selectable" ).selectable();
+
 //add button handler
 //To add selected books in an array and tempt to save to google doc via API
 $('#add').on('click', function(e){
@@ -59,14 +62,14 @@ $('#clear').on('click', function(){
 
   function parseData(arr) {   
       //clears out the old resultss, and change the font color
-      $('#results').empty();
-      $('#results').css('height', '29.125em');
-      $('#results').css('overflow', 'auto');
-      $('#results').css('color', 'white');
+      $('#selectable').empty();
+      $('#selectable').css('height', '29.125em');
+      $('#selectable').css('overflow', 'auto');
+      $('#selectable').css('color', 'white');
 
     //display data
       for( var x=0; x < arr.items.length; x++){
-        $('#results').append("<li id=li" + x +">"  +
+        $('#selectable').append("<li id=li" + x +">"  +
           "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail + "/>" 
           + "<p id=title" + x +">" + (x+1) + ". "+ arr.items[x].volumeInfo.title + "</p>" + "<p id=author" + x +">" 
           + arr.items[x].volumeInfo.authors[0] + "</p></li>");
@@ -75,7 +78,7 @@ $('#clear').on('click', function(){
           $('#img'+x).wrap("<a href='" + arr.items[x].volumeInfo.previewLink +"'/>");
 
           //add checkbox to all li tags
-          $('#li'+x).prepend("<input id=checkbox" + x +" type=" + "checkbox" + " class=" + "liChk" + " />");
+          // $('#li'+x).prepend("<input id=checkbox" + x +" type=" + "checkbox" + " class=" + "liChk" + " />");
 
           //style author names
           $('#author'+x).css('color','#f9f494');
