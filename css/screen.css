@@ -125,4 +125,11 @@ a{
   text-decoration: none;
 }
 
+#actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto; 
+}
+
 

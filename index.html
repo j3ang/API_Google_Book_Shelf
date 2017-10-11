@@ -16,10 +16,14 @@
 <body>
 
 	<form id="form">
-		<input type="text" id="inputText" placeholder="Title,ISBN#:" />
-		<input type="submit" id="submit" value="Add Book" />
+		<input type="text" id="inputText" lable="title" placeholder="Starting out with Java"/>
+		<input type="submit" id="submit" value="Search" />
 	</form>
 	<main id="main_content">
+		<div id="actions">
+			<input type="submit" id="add" value="Add" />
+			<input type="submit" id="clear" value="Clear" />
+		</div>
 		<ul id="results"></ul>
 
 	</main>
