@@ -133,3 +133,16 @@ a{
 }
 
 
+  #feedback { font-size: 1.4em;}
+  #selectable .ui-selecting { background: #FECA40; height: auto;}
+  #selectable .ui-selected { background: #F39814; color: white; height: auto; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width:29em; }
+  #selectable li { height: auto; padding: 1.5em  }
+
+
+  #main_content{
+    margin-top: 2em;
+  }
+  #selectable{
+    margin: 0 auto;
+  }

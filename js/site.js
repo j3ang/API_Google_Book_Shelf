@@ -3,7 +3,7 @@ $(document).ready(function(){ //variables used in this script is protected from 
 //hide action buttons initially | show once book's selected
 $('#actions').hide();
 
-//jquery UI library to make list selectable
+    //jquery UI library to make list selectable
 $( "#selectable" ).selectable();
 
 //add button handler
@@ -60,22 +60,59 @@ $('#clear').on('click', function(){
   });//end of form
     
 
+
+    $( document ).tooltip({
+      items: "img, [data-geo], [title]",
+      content: function() {
+        var element = $( this );
+        if ( element.is( "[data-geo]" ) ) {
+          var text = element.text();
+          return "<img class='map' alt='" + text +
+            "' src='http://maps.google.com/maps/api/staticmap?" +
+            "zoom=11&size=350x350&maptype=terrain&sensor=false&center=" +
+            text + "'>";
+        }
+        if ( element.is( "[title]" ) ) {
+          return element.attr( "title" );
+        }
+        if ( element.is( "img" ) ) {
+          return element.attr( "alt" );
+        }
+      }
+    }); 
+
+
+
+
   function parseData(arr) {   
       //clears out the old resultss, and change the font color
       $('#selectable').empty();
-      $('#selectable').css('height', '29.125em');
+      $('#selectable').css('height', '40em');
       $('#selectable').css('overflow', 'auto');
       $('#selectable').css('color', 'white');
 
+      
+
     //display data
       for( var x=0; x < arr.items.length; x++){
-        $('#selectable').append("<li id=li" + x +">"  +
-          "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail + "/>" 
+
+        
+        try {
+        $('#selectable').append("<li id=li" + x +">" + "<img src=" + arr.items[x].volumeInfo.imageLinks.thumbnail + "/>"
           + "<p id=title" + x +">" + (x+1) + ". "+ arr.items[x].volumeInfo.title + "</p>" + "<p id=author" + x +">" 
-          + arr.items[x].volumeInfo.authors[0] + "</p></li>");
+          + arr.items[x].volumeInfo.authors + "</p></li>");
+
+        } catch (e if e instanceof TypeError) {
+          // statements to handle TypeError exceptions
+          console.log("image" + x + " TypeError?");            
+        }
+        
 
           //add link to the image
           $('#img'+x).wrap("<a href='" + arr.items[x].volumeInfo.previewLink +"'/>");
+          // $('#test').append("<img src=" + arr.items[x].volumeInfo.imageLinks.thumbnail + "/>");
+          //arr.items[x].volumeInfo.imageLinks.thumbnail
+//+ "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail + "/>" 
 
           //add checkbox to all li tags
           // $('#li'+x).prepend("<input id=checkbox" + x +" type=" + "checkbox" + " class=" + "liChk" + " />");
@@ -115,11 +152,6 @@ $('#clear').on('click', function(){
 
 
   }//end of parse data
-
-
-
-
-          
 
 
 });//end of site.js
