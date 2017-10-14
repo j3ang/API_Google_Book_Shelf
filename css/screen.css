@@ -105,11 +105,11 @@ a{
   text-decoration: none;
 }
 
-  #feedback { font-size: 1.4em;}
+/*  #feedback { font-size: 1.4em;}
   #selectable .ui-selecting { background: #FECA40; height: auto;}
   #selectable .ui-selected { background: #F39814; color: white; height: auto; }
   #selectable { list-style-type: none; padding: 0; width:25em; margin: 0 auto; }
-  #selectable li { height: auto; padding: 1.5em  }
+  #selectable li { height: auto; padding: 1.5em  }*/
 
 canvas{
   position:absolute;
