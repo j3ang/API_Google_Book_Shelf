@@ -1,5 +1,4 @@
 $(document).ready(function(){ //variables used in this script is protected from gloable
-  var num=0;
 
   $('#form').on('submit', function(e) {
     var input = $('#inputText').val();
@@ -25,9 +24,8 @@ $(document).ready(function(){ //variables used in this script is protected from 
   function parseData(arr) {   
       //clears out the old resultss, and change the font color
       $('#results').empty();
-      $('#results').css('floate', 'left');
       $('#results').css('height', '29.125em');
-      $('#results').css('overflow-y', 'auto');
+      $('#results').css('overflow', 'auto');
 
       $('#results').css('color', 'white');
     //display data
