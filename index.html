@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- 	<script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> -->
-	<!-- <script type="text/javascript" src="js/animation.min.js"></script> -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/animation.min.js"></script>
 	<script src="js/site.js"></script>
 
 	<title>Online Library</title>
@@ -15,13 +16,14 @@
 <body>
 
 	<form id="form">
-		<input type="text" id="inputText" placeholder="Title,ISBN#:" />
+		<input type="text" id="inputText" placeholder="starting out with java" />
 		<input type="submit" id="submit" value="Add Book" />
 	</form>
+
 	<main id="main_content">
 		<ul id="results"></ul>
-
 	</main>
+
 	<canvas id="stage" id="respondCanvas"></canvas>
 
 </body>
