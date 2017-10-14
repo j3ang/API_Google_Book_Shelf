@@ -94,7 +94,7 @@ input[type="submit"] {
   display: block;
   width: 6.250em;
   border: 0;
-  height: 3.082em;
+  height: 3em;
   color: #fff;
   background: #dd3a27;
   font-size: 1em;
@@ -126,3 +126,14 @@ a{
 }
 
 
+/*style author names*/
+.author{
+  color: #f9f494;
+  font-size: 0.8em;
+}
+
+#feedback { font-size: 1.4em;}
+  #results .ui-selecting { background: #FECA40; height: auto;}
+  #results .ui-selected { background: #F39814; color: white; height: auto; }
+  #results { list-style-type: none; padding: 0; width:25em; margin: 0 auto; }
+  #results li { height: auto; padding: 1.5em  }

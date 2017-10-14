@@ -1,5 +1,6 @@
 $(document).ready(function(){ //variables used in this script is protected from gloable
-  var num=0;
+
+$( "#results" ).selectable();
 
   $('#form').on('submit', function(e) {
     var input = $('#inputText').val();
@@ -17,43 +18,56 @@ $(document).ready(function(){ //variables used in this script is protected from 
     // console.log(data);
         }
       }
-    });
+    });//end of ajax
     e.preventDefault();
-  });
+  });//end of form
 
 
   function parseData(arr) {   
       //clears out the old resultss, and change the font color
       $('#results').empty();
-      $('#results').css('floate', 'left');
-      $('#results').css('height', '29.125em');
-      $('#results').css('overflow-y', 'auto');
+      $('#results').css('height', '40em');
+      $('#results').css('overflow', 'auto');
+      $('#results').css('color', 'white');      
 
-      $('#results').css('color', 'white');
     //display data
-    for( var x=0; x < arr.items.length; x++){
-      $('#results').append("<li id="+"id" + x +">" + (x+1) + ". " +
-        "<img id=img" + x + " " + "src=" + arr.items[x].volumeInfo.imageLinks.thumbnail+ "/>" +
-        arr.items[x].volumeInfo.title  + "<p id=author" + x +">" + arr.items[x].volumeInfo.authors[0] + "</p></li>");
+      for( var x=0; x < arr.items.length; x++){
+        
+        try {
+        $('#results').append("<li id=li" + x +">" + "<img id=img" +x
+          + " src=" + arr.items[x].volumeInfo.imageLinks.thumbnail + "/>"
+          + "<p id=title" + x +">" + (x+1) + ". "+ arr.items[x].volumeInfo.title + "</p>" + "<p id=author" + x +">" 
+          + arr.items[x].volumeInfo.authors + "</p></li>");
 
-        //add link to the image
-        $('#img'+x).wrap("<a href='" + arr.items[x].volumeInfo.previewLink +"'/>");
+        } catch (e if e instanceof TypeError) {
+          // statements to handle TypeError exceptions
+          console.log("image" + x + " TypeError?");            
+        }
 
-        //add checkbox to all li tags
-        $('#id'+x).prepend("<input type=" + "checkbox" + " class=" + "liChk" + " />");
+          //add link to the image
+          $('#img'+x).wrap("<a href='" + arr.items[x].volumeInfo.previewLink +"'/>");
 
-        //style author names
-        $('#author'+x).css('color','#f9f494');
-        $('#author'+x).css('font-size','0.8em');
+          //style author names
+          $('#author'+x).css('color','#f9f494');
+          $('#author'+x).css('font-size','0.8em');
 
-        //hover effect to enlarg thumbnails
-        $('#img'+x).hover(function(){
-          console.log("hover in");
-          $(this).css("width", "150px");
-        }, function(){
-          console.log("hover out");
-          $(this).css("width", "30px");
-        });        
-      }
-    }
-  });
+          //hover effect to enlarg thumbnails
+          $('#img'+x).hover(function(){
+            console.log("hover in");
+            $(this).css("width", "150px");
+          }, function(){
+            console.log("hover out");
+            $(this).css("width", "30px");
+            }
+          );//end of img hover
+
+          // //List onclick handler
+          //   $('#li'+x).on("click", function(){
+          //       confirm("Add this book?");
+          //   });
+
+      }//end of display data
+
+  }//end of parse data
+
+});//end of site.js
