@@ -1,6 +1,6 @@
 $(document).ready(function(){ //variables used in this script is protected from gloable
 
-$( "#results" ).selectable();
+// $( "#results" ).selectable();
 
   $('#form').on('submit', function(e) {
     var input = $('#inputText').val();
