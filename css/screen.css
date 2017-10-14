@@ -76,7 +76,7 @@ input[type="text"] {
   width: 12.500em;
   text-transform: capitalize;
   padding: 0.375em;
-  height: 2.188em;
+  height: 2.288em;
 }
 
 input[type="submit"] {
@@ -108,7 +108,7 @@ a{
   #feedback { font-size: 1.4em;}
   #selectable .ui-selecting { background: #FECA40; height: auto;}
   #selectable .ui-selected { background: #F39814; color: white; height: auto; }
-  #selectable { list-style-type: none; padding: 0; width:20em; margin: 0 auto; }
+  #selectable { list-style-type: none; padding: 0; width:25em; margin: 0 auto; }
   #selectable li { height: auto; padding: 1.5em  }
 
 canvas{
