@@ -60,9 +60,18 @@ $( "#results" ).selectable();
 
           //List onclick handler
             $('#li'+x).on("click", function(){
-                
-                // confirm("Add this book?");
+              if ($('#add').val){
+                $('#add').remove();
+              $(this).append("<button id=add>Add</button>");
+      
+              }
+            //add button onclick listener
+            $('#add').on('click', function(){
+              console.log("added clicked");
+              $('#results').prepend("<p>Your book has been added.</p>");
             });
+            });
+
 
       }//end of display data
 
