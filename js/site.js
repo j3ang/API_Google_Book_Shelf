@@ -37,9 +37,6 @@ $(document).ready(function(){ //variables used in this script is protected from 
         //add link to the image
         $('#img'+x).wrap("<a href='" + arr.items[x].volumeInfo.previewLink +"'/>");
 
-        //add checkbox to all li tags
-        $('#id'+x).prepend("<input type=" + "checkbox" + " class=" + "liChk" + " />");
-
         //style author names
         $('#author'+x).css('color','#f9f494');
         $('#author'+x).css('font-size','0.8em');
@@ -51,6 +48,8 @@ $(document).ready(function(){ //variables used in this script is protected from 
         }, function(){
           console.log("hover out");
           $(this).css("width", "30px");
+
+
         });        
       }
     }
