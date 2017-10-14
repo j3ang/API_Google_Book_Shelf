@@ -66,20 +66,11 @@ body {
   background: #0c0c0c;
 }
 
-main-content{
-	top: 50px;
-    width:1em;
-		height:1em;
+#main_content{
+  margin-top: 2em;
 }
 
-canvas{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	z-index:-1;
-}
+
 
 input[type="text"] {
   border: 0.063em solid #ddd;
@@ -111,39 +102,32 @@ form {
   height: auto;
 }
 
-#results{
+/*#selectable{
   margin: 0 auto;
   margin-top: 4em;
   display: flex;
   flex-direction: column;
   width: 18.750em;
   height: auto;
-}
+}*/
 
 a{
   color: #ffe3c7;
   text-decoration: none;
 }
 
-#actions{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 auto; 
-}
-
-
   #feedback { font-size: 1.4em;}
   #selectable .ui-selecting { background: #FECA40; height: auto;}
   #selectable .ui-selected { background: #F39814; color: white; height: auto; }
-  #selectable { list-style-type: none; margin: 0; padding: 0; width:29em; }
+  #selectable { list-style-type: none; padding: 0; width:20em; margin: 0 auto; }
   #selectable li { height: auto; padding: 1.5em  }
 
 
-  #main_content{
-    margin-top: 2em;
-  }
-  #selectable{
-    margin: 0 auto;
-  }
-
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
