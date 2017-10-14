@@ -15,7 +15,6 @@
         addListeners();
     }
 
-
     // Init Canvas
     function initStages() {
         offsetX = (window.innerWidth-600)/2;
@@ -130,7 +129,6 @@
         });
     }
 
-
     var x = 0 
 
     window.onload = function() { 
@@ -138,10 +136,6 @@
         $(window).resize(function(){
            init();
        });
-
-        
-
-
 
     };
 })();
