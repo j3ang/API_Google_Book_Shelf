@@ -10,9 +10,18 @@ img {
     width: 3em;
     margin-right: 2em;
 }
+#logo{
+    width: 10em;
+    margin: 0 auto;
+    margin-top: 3.5em;
+    display: block;
+}
 
 body {
     background: #0c0c0c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 main-content {
     top: 5em;
@@ -30,7 +39,7 @@ canvas {
 input[type="text"] {
     border: 0.063em solid #ddd;
     font-size: 1em;
-    width: 14.500em;
+    width: 18.500em;
     text-transform: capitalize;
     padding: 0.375em;
     height: 2.188em;
@@ -53,7 +62,7 @@ input[type="submit"] {
 }
 form {
     margin: 0 auto;
-    margin-top: 5em;
+    margin-top: 1em;
     display: flex;
     flex-direction: row;
     width: 22.750em;
