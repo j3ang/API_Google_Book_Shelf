@@ -7,8 +7,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 img {
     display: block;
     float: left;
-    width: 2em;
-    margin-right: 1em;
+    width: 3em;
+    margin-right: 2em;
 }
 
 body {
@@ -56,7 +56,7 @@ form {
     margin-top: 5em;
     display: flex;
     flex-direction: row;
-    width: 18.750em;
+    width: 22.750em;
     height: auto;
 }
 #results {
@@ -138,5 +138,10 @@ a {
     border: 1px solid white;
     padding: 0.5em;
     margin-top: 1em;
+}
+
+.logo{
+    background: url('../img/google_book.png');
+    width: 600px;
 }
 
