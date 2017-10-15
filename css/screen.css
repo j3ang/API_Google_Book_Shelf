@@ -97,3 +97,31 @@ a {
     color: white;
     margin: 0 auto;
 }
+#add{
+    border: 1px solid #404040;
+    background: #cc2222;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e87b7b), to(#cc2222));
+    background: -webkit-linear-gradient(top, #e87b7b, #cc2222);
+    background: -moz-linear-gradient(top, #e87b7b, #cc2222);
+    background: -ms-linear-gradient(top, #e87b7b, #cc2222);
+    background: -o-linear-gradient(top, #e87b7b, #cc2222);
+    background-image: -ms-linear-gradient(top, #e87b7b 0%, #cc2222 100%);
+    padding: 3px 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+    text-shadow: #c70032 0 1px 0;
+    color: #f0f0f0;
+    margin-top: 0.5em;
+    font-family: arial, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    float: right;
+}
+
+#add:hover{
+    background-color: #e7e7e7;
+}

@@ -70,7 +70,7 @@ $('#form').on('submit', function(e) {
           console.log($(this).parent()[0]);
           console.log($(this).parent()[0].id);
           bookcount++;
-          var re = /\s\D*\s/g;
+          const re = /\s\D*\s/g;
           var bookarray = re.exec($(this).parent()[0].innerText);
           // duplicateValidation(bookarray);
           $('#mybooks').append("<p>" + bookcount + "." + bookarray + "</p>");
@@ -87,7 +87,7 @@ $('#form').on('submit', function(e) {
   // function duplicateValidation(text){
   //     for (var x = 0; x < bookcount; x++){
   //         if (text == bookarray) {
-              
+
   //         }
   //     }
   // }
