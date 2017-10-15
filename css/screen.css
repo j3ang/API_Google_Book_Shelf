@@ -2,132 +2,98 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 /******************************************************/
 img {
-  display: block;
-  float: left;
-  width: 2em;
-  margin-right: 1em;
+    display: block;
+    float: left;
+    width: 2em;
+    margin-right: 1em;
+}
+
+body {
+    background: #0c0c0c;
+}
+main-content {
+    top: 5em;
+    display: flex;
+    flex-direction: column;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+input[type="text"] {
+    border: 0.063em solid #ddd;
+    font-size: 1em;
+    width: 12.500em;
+    text-transform: capitalize;
+    padding: 0.375em;
+    height: 2.188em;
+}
+input[type="submit"] {
+    display: block;
+    width: 6.250em;
+    border: 0;
+    height: 3.06em;
+    color: #fff;
+    background: #dd3a27;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0.375em;
+}
+form {
+    margin: 0 auto;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+    width: 18.750em;
+    height: auto;
+}
+#results {
+    margin: 0 auto;
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    width: 23.750em;
+    height: 40em;
+    overflow: auto;
+    color: white;
+}
+a {
+    color: #ffe3c7;
+    text-decoration: none;
+}
+#feedback {
+    font-size: 1.4em;
+}
+#results .ui-selecting {
+    background: #FECA40;
+    height: auto;
+}
+#results .ui-selected {
+    background: #F39814;
+    color: white;
+    height: auto;
 }
 #results li {
-  clear: both;
-  padding-bottom: 1em;
+    height: auto;
+    padding: 1.5em
+}
+/*style author names*/
+
+.author {
+    color: #f9f494;
+    font-size: 0.8em;
 }
 
-/*************************animated js style*****************************/
-body {
-  background: #0c0c0c;
+#mybooks{
+    width:23.750em;
+    border:solid white 1px;
+    color: white;
+    margin: 0 auto;
 }
-
-main-content{
-	top: 5em;
-  display: flex;
-  flex-direction: row;
-}
-
-canvas{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	z-index:-1;
-}
-
-input[type="text"] {
-  border: 0.063em solid #ddd;
-  font-size: 1em;
-  width: 12.500em;
-  text-transform: capitalize;
-  padding: 0.375em;
-  height: 2.188em;
-}
-
-input[type="submit"] {
-  display: block;
-  width: 6.250em;
-  border: 0;
-  height: 3.06em;
-  color: #fff;
-  background: #dd3a27;
-  font-size: 1em;
-  cursor: pointer;
-  padding: 0.375em;
-}
-
-form {
-  margin: 0 auto;
-  margin-top: 5em;
-  display: flex;
-  flex-direction: row;
-  width: 18.750em;
-  height: auto;
-}
-
-#results{
-  margin: 0 auto;
-  margin-top: 4em;
-  display: flex;
-  flex-direction: column;
-  width: 23.750em;
-  height: 40em;
-  overflow: auto;
-  color: white;
-}
-
-a{
-  color: #ffe3c7;
-  text-decoration: none;
-}
-
-  #feedback { font-size: 1.4em;}
-  #results .ui-selecting { background: #FECA40; height: auto;}
-  #results .ui-selected { background: #F39814; color: white; height: auto; }
-#results li { height: auto; padding: 1.5em }

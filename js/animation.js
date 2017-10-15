@@ -138,10 +138,5 @@
         $(window).resize(function(){
            init();
        });
-
-        
-
-
-
     };
 })();
