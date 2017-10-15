@@ -30,10 +30,15 @@ canvas {
 input[type="text"] {
     border: 0.063em solid #ddd;
     font-size: 1em;
-    width: 12.500em;
+    width: 14.500em;
     text-transform: capitalize;
     padding: 0.375em;
     height: 2.188em;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    text-indent: 20px;
+    background-size: 1.5em;
+    background-position: left;
 }
 input[type="submit"] {
     display: block;
@@ -125,3 +130,13 @@ a {
 #add:hover{
     background-color: #e7e7e7;
 }
+
+#mybooks{
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid white;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
