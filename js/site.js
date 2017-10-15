@@ -70,14 +70,13 @@ $('#form').on('submit', function(e) {
         $('#add').on('click', function(){
           console.log("add clicked");
           console.log($(this).parent()[0]);
-          console.log($(this).parent()[0].id);
+          console.log($(this).parent()[0].childNodes[3]);
           bookcount++;
           const re = /\s\D*\s/g;
           var bookarray = re.exec($(this).parent()[0].innerText);
           // duplicateValidation(bookarray);
           $('#mybooks').append("<p>" + bookcount + "." + bookarray + "</p>");
-          // $('#mybooks').append(mybooks.firstChild.parentNode.childNodes[0].innerHTML);
-           
+                     
         });//end ofList onclick handler
 
       });
