@@ -39,7 +39,7 @@ $('#form').on('submit', function(e) {
         "<p id=title" + x +">" + (x+1) + ". "+ arr.items[x].volumeInfo.title + "</p>" + 
         "<p class=author id=author" + x +">" + arr.items[x].volumeInfo.authors + "</p></li>");
 
-      } catch (e if e instanceof TypeError) {
+      } catch (TypeError) {
         // statements to handle TypeError exceptions
         console.log("image" + x + " TypeError?");            
       } //end of try/catch blcok
