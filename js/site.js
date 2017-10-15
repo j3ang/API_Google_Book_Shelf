@@ -72,13 +72,25 @@ $('#form').on('submit', function(e) {
           bookcount++;
           var re = /\s\D*\s/g;
           var bookarray = re.exec($(this).parent()[0].innerText);
+          // duplicateValidation(bookarray);
           $('#mybooks').append("<p>" + bookcount + "." + bookarray + "</p>");
+          // $('#mybooks').append(mybooks.firstChild.parentNode.childNodes[0].innerHTML);
+           
         });//end ofList onclick handler
 
       });
     }//end of display data
 
   }//end of parse data
+
+
+  // function duplicateValidation(text){
+  //     for (var x = 0; x < bookcount; x++){
+  //         if (text == bookarray) {
+              
+  //         }
+  //     }
+  // }
 
 });//end of site.js
 
