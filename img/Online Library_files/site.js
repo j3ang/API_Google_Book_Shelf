@@ -70,7 +70,7 @@ $('#form').on('submit', function(e) {
         $('#add').on('click', function(){
           console.log("add clicked");
           console.log($(this).parent()[0]);
-          console.log($(this).parent()[0].childNodes[3]);
+          console.log($(this).parent()[0]);
           bookcount++;
           const re = /\s\D*\s/g;
           var bookarray = re.exec($(this).parent()[0].innerText);

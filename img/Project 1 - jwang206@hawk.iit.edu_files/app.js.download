@@ -1,0 +1,137 @@
+//This js application will be creating crud structure utlize the web indexed database
+//Creating contacts - Reading contact information - Storeing conact information - delete cotact information
+jQuery(document).ready(function($) {
+    console.log("app.js loaded");
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    var hh = today.getHours();
+    var min = today.getMinutes();
+    var sec = today.getSeconds();
+
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = mm + '/' + dd + '/' + yyyy + " " + hh + ":" + min + ":" + sec;
+
+    $('#date').append(today);
+
+    // NEW NOTE BTN ACTION
+    $('#new_note').click(function(e) {
+        $('#new_form').toggle();
+    });
+
+
+    //open database
+    var db;
+    var openRequest = indexedDB.open('notes', 1);
+
+    //upgrade database if needed - This event only handled in recent browsers
+    openRequest.onupgradeneeded = function(e) {
+        console.log('upgrading DB');
+        var thisDB = e.target.result;
+        if (!thisDB.objectStoreNames.contains('notesStore')) {
+            thisDB.createObjectStore('notesStore', {
+                keyPath: "id",
+                autoIncrement: true
+            });
+        }
+    };
+
+    //error handling 
+    openRequest.onerror = function(e) {
+        console.dir(e);
+    };
+
+    //success handling
+    openRequest.onsuccess = function(e) {
+        console.log('Success: Database was opened!');
+        db = e.target.result;
+
+        //Add button
+        $('#add').click(function() {
+	   		var dnT = $('#date').text();
+	   		var detail = $('#note_detail').val();
+	   		//calling addNote() function
+	        addNote(new note(dnT, detail));
+
+	        //hides new note form on refresh
+	        $('#new_note').toggle();
+	        $('#date').val('');
+	        $('#note_detail').val('');
+        });
+
+        // render notes list
+        showNotes();
+    };
+
+
+  //function to add new note
+    function addNote(note) {
+        var time = $('#date').text();
+        var detail = $('#note_detail').val();
+
+        // create transaction
+        var transaction = db.transaction("notesStore", "readwrite");
+        console.log('transaction created');
+        alert('transaction created');
+
+        // Ask for ObejcetStore
+        var store = transaction.objectStore("notesStore");
+        alert('objectStore obtained');
+
+        // Perform the add action
+        openRequest = store.add(note);
+
+        //Error
+        openRequest.onerror = function(e) {
+            console.log("Sorry, the contact was not added");
+        }
+
+        //Success - log and show on website
+        openRequest.onsuccess = function(e) {
+            console.log($('#note_detail').text() + 'added');
+            $('#date').text('');
+            $('#note_detail').val('');
+            showNotes();
+        }
+    }
+
+
+
+    //function to display notes list
+    function showNotes() {
+
+        //Count Objects
+        var transaction = db.transaction(['notesStore'], 'readonly');
+        var store = transaction.objectStore('notesStore');
+        var countRequest = store.count();
+
+        countRequest.onsuccess = function(){
+        	console.log(countRequest.result);
+        	var count  = Number(countRequest.result);
+
+        	if (countRequest.result == 0) {
+        		$('#notes_list').append('No notes to show.');
+        	} else {
+        		$('#notes_list').append('There are ' + count + ' notes');
+        	}
+        }
+    }
+
+
+    //define note object
+    function note(time, detail){
+    	this.time = time;
+    	this.detail = detail;
+    }
+ 
+
+}); //jQuery document ready end
