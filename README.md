@@ -1,5 +1,5 @@
 # API_Project_2 :night_with_stars:
-
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
 
 ## Project Description
 
