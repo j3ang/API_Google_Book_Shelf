@@ -1,0 +1,22 @@
+{
+  "name": "book-tracker",
+  "version": "0.0.1",
+  "description": "API Porject3 | This project will keep track of the progress of your book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwang206/API_Project_2.git"
+  },
+  "author": "Alex Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwang206/API_Project_2/issues"
+  },
+  "homepage": "https://github.com/jwang206/API_Project_2#readme",
+  "dependencies": {
+    "require": "^2.4.20"
+  }
+}
