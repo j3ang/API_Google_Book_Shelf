@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jwang206/API_Project_2#readme",
   "dependencies": {
+    "request": "^2.83.0",
     "require": "^2.4.20"
   }
 }
